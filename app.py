@@ -75,13 +75,17 @@ def index():
     return render_template("index.html")
 
 @app.route("/kliknij", methods=["POST"])
-
 def kliknij():
-    # Tutaj serwer obsługuje akcję po kliknięciu przycisku
     print("Użytkownik kliknął przycisk na stronie!")
-    
-    # Bezpieczne przekierowanie na stronę wewnętrzną lub oficjalną witrynę
-    return "Sygnał odebrany pomyślnie przez serwer!"
+
+    return """
+    <h1 style='font-family:Arial;text-align:center;margin-top:100px;'>
+        ✅ Sygnał odebrany pomyślnie przez serwer!
+    </h1>
+    <p style='text-align:center;font-family:Arial;'>
+        Twoja aplikacja Flask działa poprawnie.
+    </p>
+    """
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
