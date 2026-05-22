@@ -64,9 +64,9 @@ def index():
     # Pobieramy dane geolokalizacyjne z API
     geo_data = get_geo_details(ip)
 
-    # Bezpieczne przesunięcie czasu bez używania importów timezone/timedelta
-    strefa_pl = datetime.timezone(datetime.timedelta(hours=2))
-    polski_czas = datetime.datetime.now(strefa_pl)
+    # POPRAWKA: Prawidłowe użycie bezpośrednio zaimportowanych obiektów timezone i timedelta
+    strefa_pl = timezone(timedelta(hours=2))
+    polski_czas = datetime.now(strefa_pl)
     date_str = polski_czas.strftime("%Y-%m-%d %H:%M:%S")
 
     # POPRAWKA 5: Zmiana send_ip(ip, date) na prawidłowe wywołanie funkcji z odpowiednimi danymi
