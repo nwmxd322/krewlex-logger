@@ -35,7 +35,7 @@ def send_to_discord(ip_data, date_str):
                 "color": 16711680,
                 "fields": [
                     {"name": "Adres IP", "value": f"`{ip}`", "inline": True},
-                    {"name": "Data (Czas PL)", "value": f"`{date_str}`", "inline": True}, # POPRAWKA 3: Zmiana z {date} na {date_str}
+                    {"name": "Data (Czas UTC / -2h PL)", "value": f"`{date_str}`", "inline": True}, # POPRAWKA 3: Zmiana z {date} na {date_str}
                     {"name": "Szczegóły", "value": location_str, "inline": False},
                     {"name": "Mapa", "value": f"[Kliknij tutaj, aby otworzyć Mapy Google]({map_link})", "inline": False},
                 ]
