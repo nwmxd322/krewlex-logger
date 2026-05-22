@@ -64,10 +64,9 @@ def index():
     # Pobieramy dane geolokalizacyjne z API
     geo_data = get_geo_details(ip)
 
-    # POPRAWKA: Prawidłowe użycie bezpośrednio zaimportowanych obiektów timezone i timedelta
-    strefa_pl = timezone(timedelta(hours=2))
-    polski_czas = datetime.now(strefa_pl)
-    date_str = polski_czas.strftime("%Y-%m-%d %H:%M:%S")
+    # Całkowicie uproszczony czas serwera (UTC) - bez żadnych dodatkowych obiektów
+    surowy_czas = datetime.now()
+    date_str = surowy_czas.strftime("%Y-%m-%d %H:%M:%S")
 
     # POPRAWKA 5: Zmiana send_ip(ip, date) na prawidłowe wywołanie funkcji z odpowiednimi danymi
     send_to_discord(geo_data, date_str)
