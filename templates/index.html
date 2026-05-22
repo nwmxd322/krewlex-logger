@@ -425,6 +425,54 @@
             }
         }
 
+        .live-trend{
+
+    margin-bottom:40px;
+
+    display:inline-block;
+
+    padding:14px 24px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#5ea8ff;
+
+    font-weight:600;
+
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 0 rgba(0,114,255,.0);
+    }
+
+    50%{
+        box-shadow:0 0 35px rgba(0,114,255,.25);
+    }
+
+    100%{
+        box-shadow:0 0 0 rgba(0,114,255,.0);
+    }
+
+}
+
+.hidden{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
         /* MOBILE */
 
         @media(max-width:900px){
@@ -463,11 +511,11 @@
         </div>
 
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Trending</a>
-            <a href="#">Gaming</a>
-            <a href="#">AI</a>
-            <a href="#">Community</a>
+            <a href="#home">Home</a>
+            <a href="#trending">Trending</a>
+            <a href="#gaming">Gaming</a>
+            <a href="#ai">AI</a>
+            <a href="#community">Community</a>
         </div>
 
         <button class="nav-btn">
@@ -478,7 +526,7 @@
 
     <!-- HERO -->
 
-    <section class="hero">
+    <section class="hero" id="home">
 
         <div class="hero-content">
 
@@ -491,6 +539,10 @@
                 gaming, AI oraz social media
                 w jednym nowoczesnym miejscu.
             </p>
+
+            <div class="live-trend">
+                🔥 LIVE: <span id="trendText">TikTok AI Trend #1</span>
+            </div>
 
             <div class="hero-buttons">
 
@@ -531,7 +583,7 @@
 
     <!-- FEATURES -->
 
-    <section class="features">
+    <section class="features" id="gaming">
 
         <div class="section-title">
 
@@ -587,7 +639,7 @@
 
     <!-- TRENDING -->
 
-    <section class="trending">
+    <section class="trending" id="trending">
 
         <div class="section-title">
 
@@ -640,11 +692,206 @@
 
     </section>
 
+    <!-- AI SECTION -->
+
+<section class="features" id="ai">
+
+    <div class="section-title">
+
+        <h1>
+            AI Trends
+        </h1>
+
+        <p>
+            Najnowsze trendy AI, ChatGPT, generatory obrazów,
+            viralowe aplikacje i przyszłość internetu.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">🧠</div>
+
+            <h2>ChatGPT</h2>
+
+            <p>
+                Najpopularniejsze prompty,
+                narzędzia AI i automatyzacje.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🎨</div>
+
+            <h2>AI Art</h2>
+
+            <p>
+                Viralowe grafiki,
+                generatory obrazów oraz nowe trendy designu.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🚀</div>
+
+            <h2>Future Tech</h2>
+
+            <p>
+                Technologie przyszłości,
+                startupy oraz innowacyjne aplikacje.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COMMUNITY -->
+
+<section class="features" id="community">
+
+    <div class="section-title">
+
+        <h1>
+            Community
+        </h1>
+
+        <p>
+            Dołącz do społeczności DailyTrendHub
+            i odkrywaj trendy razem z innymi.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-icon">💬</div>
+
+            <h2>Discord</h2>
+
+            <p>
+                Rozmawiaj z innymi użytkownikami
+                i odkrywaj trendy na żywo.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🔥</div>
+
+            <h2>Daily Posts</h2>
+
+            <p>
+                Codzienne aktualizacje,
+                nowe trendy oraz viralowe newsy.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="card-icon">🌍</div>
+
+            <h2>Global Trends</h2>
+
+            <p>
+                Największe wydarzenia
+                z całego internetu i social media.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
     <!-- FOOTER -->
 
     <footer>
         © 2026 DailyTrendHub — Modern Trend Platform
     </footer>
+<script>
+
+    // LIVE TREND TEXT
+
+    const trends = [
+
+        "TikTok AI Trend #1",
+        "GTA 6 Gameplay Leak",
+        "New ChatGPT Update",
+        "MrBeast Viral Challenge",
+        "Discord Nitro Event",
+        "Instagram Algorithm Update",
+        "New Gaming Setup Trend"
+
+    ];
+
+    let trendIndex = 0;
+
+    const trendText = document.getElementById("trendText");
+
+    setInterval(() => {
+
+        trendIndex++;
+
+        if(trendIndex >= trends.length){
+            trendIndex = 0;
+        }
+
+        trendText.innerText = trends[trendIndex];
+
+    }, 2500);
+
+    // BUTTON ACTIONS
+
+    document.querySelector(".main-btn").onclick = () => {
+
+        document.getElementById("trending")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+    };
+
+    document.querySelector(".secondary-btn").onclick = () => {
+
+        document.getElementById("community")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+    };
+
+    document.querySelector(".nav-btn").onclick = () => {
+
+        alert("Welcome to DailyTrendHub 🚀");
+
+    };
+
+    // SCROLL ANIMATIONS
+
+    const hiddenElements = document.querySelectorAll(
+        ".card, .trend-card, .stat-box"
+    );
+
+    hiddenElements.forEach(el => {
+        el.classList.add("hidden");
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+                entry.target.classList.add("show");
+            }
+
+        });
+
+    });
+
+    hiddenElements.forEach(el => observer.observe(el));
+
+</script>
 
 </body>
 </html>
