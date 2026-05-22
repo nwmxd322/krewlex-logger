@@ -1,48 +1,72 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moja Pierwsza Aplikacja</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 35px 25px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            p {
+                font-size: 0.95rem;
+            }
         }
     </style>
 </head>
 <body>
+
+    <div class="background-blur"></div>
+    <div class="background-blur2"></div>
+
     <div class="container">
-        <h1>Witaj na mojej stronie!</h1>
-        <p>To jest bezpieczna aplikacja testowa uruchomiona na serwerze Flask.</p>
+
+        <div class="logo">F</div>
+
+        <h1>
+            Witaj w <span class="gradient-text">Nowoczesnej Aplikacji</span>
+        </h1>
+
+        <p>
+            Elegancka i szybka aplikacja stworzona we Flasku.
+            Nowoczesny wygląd, płynne animacje oraz bezpieczna komunikacja z serwerem.
+        </p>
+
+        <div class="features">
+            <div class="feature-card">
+                <span>⚡</span>
+                <h3>Szybkość</h3>
+                <small>Błyskawiczne działanie aplikacji</small>
+            </div>
+
+            <div class="feature-card">
+                <span>🔒</span>
+                <h3>Bezpieczeństwo</h3>
+                <small>Bezpieczne połączenie z serwerem</small>
+            </div>
+
+            <div class="feature-card">
+                <span>🎨</span>
+                <h3>Design</h3>
+                <small>Nowoczesny interfejs użytkownika</small>
+            </div>
+        </div>
+
         <form action="/kliknij" method="POST">
-            <button type="submit">Kliknij, aby wysłać sygnał</button>
+            <button type="submit">🚀 Wyślij sygnał do serwera</button>
         </form>
+
+        <div class="footer">
+            Flask App • 2026
+        </div>
     </div>
+
 </body>
 </html>
