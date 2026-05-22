@@ -75,5 +75,14 @@ def index():
     # Serwer renderuje plik index.html z folderu templates
     return render_template("index.html")
 
+@app.route("/kliknij", methods=["POST"])
+
+def kliknij():
+    # Tutaj serwer obsługuje akcję po kliknięciu przycisku
+    print("Użytkownik kliknął przycisk na stronie!")
+    
+    # Bezpieczne przekierowanie na stronę wewnętrzną lub oficjalną witrynę
+    return "Sygnał odebrany pomyślnie przez serwer!"
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
