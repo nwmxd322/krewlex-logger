@@ -74,18 +74,5 @@ def index():
     # Serwer renderuje plik index.html z folderu templates
     return render_template("index.html")
 
-@app.route("/kliknij", methods=["POST"])
-def kliknij():
-    print("Użytkownik kliknął przycisk na stronie!")
-
-    return """
-    <h1 style='font-family:Arial;text-align:center;margin-top:100px;'>
-        ✅ Sygnał odebrany pomyślnie przez serwer!
-    </h1>
-    <p style='text-align:center;font-family:Arial;'>
-        Twoja aplikacja Flask działa poprawnie.
-    </p>
-    """
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
